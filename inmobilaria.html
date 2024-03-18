@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/57faba85b1.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/menu.css">
+    
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>SANRODTECHN COMUNICATIONS  </title>
+    
+      <style>
+
+/*Estilo de nav */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #ebebeb; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+ 
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+ 
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #06c526;
+    transition: all;
+}
+ 
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+ 
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow:hidden;
+    width:100%;
+}
+body {
+  overflow-x: hidden;
+}
+ 
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #32f553;
+    overflow: hidden;
+}
+ 
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #06a039;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+ 
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #08d308;
+    color: black;
+}
+ 
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: rgb(1, 187, 26);
+}
+ 
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+ 
+a svg{
+  transition:all .3s ease;
+
+}
+ 
+#ico{
+  display: none;
+}
+ 
+.menu{
+  background: #000;
+  display: none;
+  padding: 5px;
+  width: 320px;
+  
+ 
+  transition: all 0.5s ease;
+ 
+  a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 2px;
+    margin: 3px 0;
+    text-decoration: none;
+    background: #444;
+ 
+ 
+   
+  }
+}
+
+      </style>
+<!-- Js del Menu  -->
+      <Script>
+        function openNav() {
+            document.getElementById("sideNavigation").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+         
+        function closeNav() {
+            document.getElementById("sideNavigation").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+      </Script>
+
+</head>
+
+    
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    
+                    
+                    <a class="navbar-brand" href="index.html">SANRODTECHN COMUNICATIONS </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            
+                            <li class="nav-item dropdown">
+                                
+                                <img src="img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <br>
+            
+    <div id="sideNavigation" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <br><br>
+        <a href="index.html">MENU</a>
+        <a href="login.html">Inicio Secion</a>
+        <a href="inmobilaria.html">Mobiliaria</a>
+        <a href="tv.html">Televisores</a>
+        <a href="impresora.html">Impresoras</a>
+        <a href="suplidores.html">Suplidores</a>
+        <a href="contactos .html">Contact Us</a>
+        <a href="nosotros.html">Acerca de Nosotros</a>
+        <br><br>
+        <a href="login.html">Iniciar Seccion</a>
+      </div>
+       
+      <nav class="topnav">
+        <a href="#" onclick="openNav()">
+          <svg width="30" height="30" id="icoOpen">
+              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+          </svg>
+        </a>
+      </nav>
+       
+      <div id="main">
+      <!-- Add all your websites page content here  -->
+      </div>
+<!-- css del menu  -->
+            <h1 class="display-4 mt-4">SANRODTECHN COMUNICATIONS </h1>
+            <p class="lead">Brindado Servicio de Tecnologia a tu Hogar y Negocio</p>
+            
+         
+        </div>
+    
+
+      <style>
+        
+      </style>
+        <div class="container" id="lista-productos">
+            
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA GAMER</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/GAMER-01.jfif" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">15000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>8 GB RAM</li>
+                            <li>COLOR PLATEADO</li>
+                            <li>256 GB DISCO SSD</li>
+                            <li>COLOR PLATEADO</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Agregar a Carrito</a>
+                       
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA GAMER VERDE </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/SILLA-GAMER3.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">27000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16 GB RAM</li>
+                            <li>COLOR NEGRO</li>
+                            <li>1 TB DD</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA GAMER </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/SILLA-GAMER2.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">18000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16 GB RAM</li>
+                            <li>COLOR PLATEADO</li>
+                            <li> 500GB</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA RECLINABLE</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/SGJR-3.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">35900</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li> 16 GB RAM</li>
+                            <li>COLOR GOLD</li>
+                            <li>1TB </li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">DELL</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/GAMER-02.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">45000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16GB RAM</li>
+                            <li>COLOR NEGRO</li>
+                            <li>1TB DS</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA RECLINABLE</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/45.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">25000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16 GB RAM</li>
+                            <li>COLOR BLANCO</li>
+                            <li>500 GB DD</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA EJECUTIVA 405</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/46.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">42000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16GB RAM</li>
+                            <li>COLOR PLATEADO</li>
+                            <li>1TB DS</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">SILLA EJECUTIVA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/47.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">550000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16GB RAM</li>
+                            <li>COLOR NEGRO</li>
+                            <li> 2TB DS</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">DELL</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/SGJR-3.jpg" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">RD$<span class="">53000</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>16GB RAM</li>
+                            <li>COLOR NEGRO</li>
+                            <li> 2TB DS</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Agregar a Carrito</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+<!-- boton ir arriba  -->
+<a class="ir-arriba"  javascript:void(0) title="Volver arriba">
+  <span class="fa-stack">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+  </span>
+</a>
+
+
+
+    </main>
+           <!-- aqui va el catalogo de Productos ojo -->
+        <div id="carrusel-contenido">
+            <div id="carrusel-caja">
+                <div class="carrusel-elemento">
+                    <img class="carrusel-elemento" src="img/GAMER-01.jfif" >
+                </div>
+                
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="img/GAMER-02.jpg">
+                </div>
+                <div class="carrusel-elemento">   
+                    <img class="imagenes" src="img/SILLA-GAMER2.jpg">    
+                                        
+                </div>
+                <div>
+                      
+                </div>
+              
+                
+            </div>
+            
+        </div>
+
+         <!-- icono whatssap  -->
+    
+     
+	<a href="https://api.whatsapp.com/send?phone=8297662138" class="btn-wsp"  target="_blank">
+        <i class="fa fa-whatsapp icono"></i></a>
+
+        <footer class="piePagina">
+            <p> Todos los derechos Reservados </p>
+            <p>Informacion C/p Palmar Abajo Villa Gonzalez Santiago de los Caballeros Rep.Dom Cel. 829-766-2138  Cel.829-870-1523   Contactos</p>  
+         </footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+.fa-2x {
+font-size: 2em;
+}
+.fa {
+position: relative;
+display: table-cell;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+
+.main-menu:hover,nav.main-menu.expanded {
+width:250px;
+overflow:visible;
+}
+
+.main-menu {
+background:white;
+border-right:1px solid #e5e5e5;
+position:absolute;
+top:50px;
+bottom:0;
+margin-top: 50px;
+height:100%;
+left:0;
+width:60px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+
+.main-menu>ul {
+margin:7px 0;
+}
+
+.main-menu li {
+position:relative;
+display:block;
+width:250px;
+
+}
+
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:7px;
+color:solid  #1b18c7;
+ font-family: arial;
+font-size: 14px;
+text-decoration:none;
+transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+  
+}
+
+main{
+    background-color: #d7f0de;
+
+}
+/* dando la bienvenida al usuario  */
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+background-color:#000000;
+}
+.area {
+float: left;
+background: #e2e2e2;
+width: 100%;
+height: 100%;
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+/* logo parametros*/
+
+.logo{
+  width: 600px; height: 300px;
+ margin-top: -170px;
+ margin-left: 325px;
+ margin-right: 150px;
+ margin-bottom: 40px;
+ transform: translate3d(0px, 0px, 0px);
+ transition: transform .2s ease-in-out;
+ border-radius: 40px;
+ border: #09aa39 solid ;
+}
+
+.logo:hover{
+  transform: translate3d(0px, -150px, 0px);
+}
+
+/* boton ir arriba */
+
+.ir-arriba{
+    display:none;
+    background-repeat:no-repeat;
+    font-size:20px;
+    color:rgb(5, 228, 24);
+    cursor:pointer;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    z-index:2;
+  }
+
+  /* carrusel imagenes   */
+  #carrusel-caja {
+    -moz-animation: automatizacion 15s infinite linear;
+    -o-animation: automatizacion 15s infinite linear;
+    -webkit-animation: automatizacion 15s infinite linear;
+    animation: automatizacion 15s infinite linear;
+  
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+  
+    height: 500px;
+    width: 300%;
+  }
+  
+  #carrusel-contenido {
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+  }
+  
+  
+  .img{
+    height: 150px;
+    width: 100%;
+  }
+  
+  .carrusel-elemento {
+    float: left;
+    width: 33.333%;
+  }
+  
+  @-moz-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+  
+    30% {
+        margin-left: 0;
+    }
+  
+    35% {
+        margin-left: -100%;
+    }
+  
+    65% {
+        margin-left: -100%;
+    }
+  
+    70% {
+        margin-left: -200%;
+    }
+  
+    95% {
+        margin-left: -200%;
+    }
+  
+    100% {
+        margin-left: 0;
+    }
+  }
+  
+  @-webkit-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+  
+    30% {
+        margin-left: 0;
+    }
+  
+    35% {
+        margin-left: -100%;
+    }
+  
+    65% {
+        margin-left: -100%;
+    }
+  
+    70% {
+        margin-left: -200%;
+    }
+  
+    95% {
+        margin-left: -200%;
+    }
+  
+    100% {
+        margin-left: 0;
+    }
+  }
+  
+  @keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+  
+    30% {
+        margin-left: 0;
+    }
+  
+    35% {
+        margin-left: -100%;
+    }
+  
+    65% {
+        margin-left: -100%;
+    }
+  
+    70% {
+        margin-left: -200%;
+    }
+  
+    95% {
+        margin-left: -200%;
+    }
+  
+    100% {
+        margin-left: 0;
+    }
+
+
+
+
+
+
+
+  }
+
+
+.lead{
+    
+        text-align: center; 
+        font-family: Arial rgb(7, 224, 105); 
+        font-weight: bold; 
+        font-size: 30px; 
+        color: #09aa39; 
+        text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+.piePagina{
+    text-align: center;
+    color: #1b6e29;
+
+}
+
+  /* boton whatssap  */
+  .btn-wsp{
+    position:fixed;
+    display: inline;
+    width:60px;
+    text-decoration: dashed;
+    height:50px;
+    line-height: 50px;
+    bottom:25px;
+    right:70px;
+   
+    background:rgb(153, 226, 192);
+    color:#0cb328;
+    border-radius:40px;
+    
+    text-align:center;
+    font-size:400px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+
+  }
+  .btn-wsp:hover{
+    background: #13c253;
+  }
+
+  .fa{
+    position:absolute;
+    right:2px;
+    bottom:10px;
+  }
+  @media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+  }
+  
+}
